@@ -1,0 +1,18 @@
+@startuml
+actor Receptionist
+participant "Hệ thống đặt phòng" as System
+participant "Room Management" as Room
+
+Receptionist -> System: Tra cứu mã đặt phòng
+
+alt Check-in
+    System -> Room: Gán phòng thực tế
+    System -> System: Cập nhật trạng thái phòng
+end
+
+alt Check-out
+    System -> System: Tổng hợp chi phí
+    Receptionist -> System: Thu tiền khách
+    System -> Room: Cập nhật trạng thái buồng phòng
+end
+@enduml
