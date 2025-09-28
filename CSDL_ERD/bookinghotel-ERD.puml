@@ -1,0 +1,67 @@
+@startuml
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+
+' Bảng Guest
+Table(Guest, "Guest") {
+  +GuestID : int <<PK>>
+  Name : varchar
+  Phone : varchar
+  Email : varchar
+  Address : varchar
+}
+
+' Bảng RoomType
+Table(RoomType, "RoomType") {
+  +TypeID : int <<PK>>
+  Name : varchar
+  Price : decimal
+  Capacity : int
+  Description : varchar
+}
+
+' Bảng Room
+Table(Room, "Room") {
+  +RoomID : int <<PK>>
+  TypeID : int <<FK>>
+  Status : varchar
+  Floor : int
+}
+
+' Bảng Staff
+Table(Staff, "Staff") {
+  +StaffID : int <<PK>>
+  Name : varchar
+  Role : varchar
+  Username : varchar
+  PasswordHash : varchar
+}
+
+' Bảng Reservation
+Table(Reservation, "Reservation") {
+  +ResvID : int <<PK>>
+  GuestID : int <<FK>>
+  RoomID : int <<FK>>
+  StaffID : int <<FK>>
+  CheckInDate : date
+  CheckOutDate : date
+  Status : varchar
+}
+
+' Bảng Payment
+Table(Payment, "Payment") {
+  +PaymentID : int <<PK>>
+  ResvID : int <<FK>>
+  Amount : decimal
+  Method : varchar
+  Status : varchar
+  Date : date
+}
+
+' Quan hệ 1-N
+Guest ||--o{ Reservation : "1-N"
+RoomType ||--o{ Room : "1-N"
+Room ||--o{ Reservation : "1-N"
+Staff ||--o{ Reservation : "1-N"
+Reservation ||--o{ Payment : "1-N"
+
+@enduml
