@@ -1,0 +1,17 @@
+@startuml
+actor Guest
+participant "Hệ thống đặt phòng" as System
+participant "Payment Gateway" as Payment
+participant "Email Service" as Email
+
+Guest -> System: Chọn phòng
+System -> System: Giữ phòng (hold)
+
+Guest -> System: Nhập thông tin đặt phòng
+Guest -> System: Thực hiện thanh toán
+System -> Payment: Gửi thông tin thanh toán
+Payment --> System: Kết quả thanh toán
+
+System -> Guest: Xác nhận đặt phòng
+System -> Email: Gửi email xác nhận
+@enduml
