@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Guest
+actor Receptionist
+actor Manager
+actor "Payment Gateway" as PaymentGateway
+actor Housekeeping
+
+usecase "Tìm phòng / Xem chi tiết phòng" as UC1
+usecase "Đặt phòng online (Booking)" as UC2
+usecase "Thanh toán online" as UC3
+usecase "Check-in / Check-out" as UC4
+usecase "Quản lý phòng & giá" as UC5
+usecase "Quản lý đặt phòng (Receptionist)" as UC6
+usecase "Công việc buồng phòng" as UC7
+usecase "Báo cáo doanh thu" as UC8
+
+Guest --> UC1
+Guest --> UC2
+Guest --> UC3
+
+Receptionist --> UC4
+Receptionist --> UC6
+
+Manager --> UC5
+Manager --> UC8
+
+Housekeeping --> UC7
+
+UC2 --> UC3 : <<includes>>
+UC4 --> UC3 : <<includes>>
+
+@enduml
