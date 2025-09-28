@@ -27,7 +27,7 @@ Dự án **Hotel Booking System** là một hệ thống quản lý đặt phòn
 - **ERD (Entity-Relationship Diagram)**: mô tả 6 bảng dữ liệu chính: Guest, RoomType, Room, Reservation, Payment, Staff với các quan hệ PK-FK rõ ràng.
 
 ## Công nghệ
-- **Thiết kế UML**: PlantUML / draw.io  
-- **Cơ sở dữ liệu**: MySQL / PostgreSQL (tùy triển khai)  
+- **Thiết kế UML**: PlantUML 
+- **Cơ sở dữ liệu**: MySQL 
 - **Quản lý dự án**: Jira theo quy trình Agile-Scrum  
 - **Quản lý mã nguồn**: GitHub (public repo)
