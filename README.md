@@ -31,3 +31,10 @@ Dự án **Hotel Booking System** là một hệ thống quản lý đặt phòn
 - **Cơ sở dữ liệu**: MySQL 
 - **Quản lý dự án**: Jira theo quy trình Agile-Scrum  
 - **Quản lý mã nguồn**: GitHub (public repo)
+
+## Thông tin sinh viên
+Họ tên: Phan Phương Nghi
+
+MSSV: N23DCPT037
+
+Lớp: D23CQPTTK01-N
